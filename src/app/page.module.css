@@ -1,0 +1,346 @@
+.main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero,
+.section,
+.useCaseSection,
+.testimonialSection,
+.cta {
+  position: relative;
+  border-radius: 2.2rem;
+  border: 1px solid rgba(19, 36, 54, 0.08);
+  background: rgba(255, 250, 244, 0.74);
+  box-shadow: 0 28px 80px rgba(19, 36, 54, 0.08);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 1.4rem;
+  padding: 1.5rem;
+}
+
+.heroCopy {
+  display: grid;
+  align-content: start;
+  gap: 1.35rem;
+  padding: 1rem 0.5rem 0.5rem;
+}
+
+.heroCopy h1,
+.sectionIntro h2,
+.cta h2 {
+  margin: 0;
+  font-family:
+    "Trebuchet MS",
+    "Avenir Next Condensed",
+    sans-serif;
+  font-size: clamp(3.5rem, 8vw, 6.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.sectionIntro h2,
+.cta h2 {
+  font-size: clamp(2.1rem, 4vw, 3.8rem);
+}
+
+.heroText,
+.cta p,
+.sectionIntro p {
+  margin: 0;
+  max-width: 40rem;
+  color: rgba(23, 34, 48, 0.74);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.metricStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.metricStrip article {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(19, 36, 54, 0.08);
+}
+
+.metricStrip strong {
+  font-size: 1.65rem;
+  letter-spacing: -0.05em;
+}
+
+.metricStrip span {
+  color: rgba(23, 34, 48, 0.7);
+}
+
+.heroConsole {
+  padding: 1.1rem;
+  border-radius: 1.9rem;
+  background: linear-gradient(165deg, rgba(19, 36, 54, 0.98), rgba(11, 21, 31, 0.93));
+  color: #f8f0e7;
+  overflow: hidden;
+}
+
+.consoleTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(248, 240, 231, 0.72);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+}
+
+.liveTag {
+  color: #93f0d7;
+}
+
+.consoleBody {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.consoleBody h2 {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  line-height: 0.96;
+}
+
+.consoleLabel {
+  margin: 0;
+  color: rgba(248, 240, 231, 0.62);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+}
+
+.scoreBlock {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem;
+  border-radius: 1.45rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.scoreBlock span {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: rgba(248, 240, 231, 0.65);
+}
+
+.scoreBlock strong {
+  font-size: clamp(2.8rem, 7vw, 4rem);
+  line-height: 0.9;
+  color: #f1c27d;
+}
+
+.scoreBlock small {
+  color: rgba(248, 240, 231, 0.72);
+}
+
+.consoleGrid,
+.timeline,
+.cardGrid,
+.pathGrid,
+.loopGrid,
+.testimonialGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.consoleGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.consoleGrid article,
+.timeline div {
+  padding: 1rem;
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.consoleGrid strong,
+.timeline p {
+  display: block;
+  margin-top: 0.35rem;
+  color: rgba(248, 240, 231, 0.88);
+}
+
+.timeline {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.timeline span {
+  display: inline-flex;
+  color: #93f0d7;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ribbon {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding: 0 0.4rem;
+}
+
+.ribbon span {
+  display: inline-flex;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(19, 36, 54, 0.08);
+  color: rgba(23, 34, 48, 0.68);
+  text-transform: lowercase;
+}
+
+.section,
+.testimonialSection {
+  display: grid;
+  gap: 1.3rem;
+  padding: 1.5rem;
+}
+
+.sectionIntro {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cardGrid,
+.pathGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.capabilityCard,
+.pathCard,
+.loopCard,
+.testimonialCard {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1.15rem;
+  border-radius: 1.6rem;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(19, 36, 54, 0.08);
+}
+
+.cardNumber {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 124, 81, 0.12);
+  color: #a94c26;
+  font-weight: 700;
+}
+
+.capabilityCard h3,
+.pathCard h3,
+.loopCard h3,
+.testimonialCard strong {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.capabilityCard p,
+.pathCard p,
+.loopCard p,
+.testimonialCard p,
+.testimonialCard span {
+  margin: 0;
+  color: rgba(23, 34, 48, 0.72);
+  line-height: 1.65;
+}
+
+.useCaseSection {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.pilotPanel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.2rem;
+  border-radius: 1.8rem;
+  background: linear-gradient(150deg, rgba(0, 168, 134, 0.08), rgba(255, 124, 81, 0.08));
+  border: 1px solid rgba(19, 36, 54, 0.08);
+}
+
+.loopGrid,
+.testimonialGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.labSection {
+  padding: 0.5rem 0;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.cta div {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 44rem;
+}
+
+@media (max-width: 1040px) {
+  .hero,
+  .cta {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .consoleGrid,
+  .timeline,
+  .cardGrid,
+  .pathGrid,
+  .loopGrid,
+  .testimonialGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .metricStrip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero,
+  .section,
+  .useCaseSection,
+  .testimonialSection,
+  .cta {
+    padding: 1rem;
+    border-radius: 1.6rem;
+  }
+
+  .heroCopy h1 {
+    font-size: clamp(2.8rem, 16vw, 4.2rem);
+  }
+}

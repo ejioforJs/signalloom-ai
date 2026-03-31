@@ -1,0 +1,400 @@
+.shell {
+  display: grid;
+  gap: 1.75rem;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  background: rgba(248, 240, 230, 0.8);
+  border: 1px solid rgba(19, 36, 54, 0.12);
+  box-shadow: 0 30px 80px rgba(19, 36, 54, 0.08);
+}
+
+.compact {
+}
+
+.full {
+  padding: 1.75rem;
+}
+
+.panelHeader {
+  display: grid;
+  gap: 1rem;
+}
+
+.title {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 0.96;
+}
+
+.helper {
+  margin: 0;
+  max-width: 46rem;
+  color: rgba(23, 34, 48, 0.72);
+}
+
+.templates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.9rem;
+}
+
+.templateButton {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  border-radius: 1.3rem;
+  border: 1px solid rgba(19, 36, 54, 0.12);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(239, 228, 214, 0.85));
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.templateButton span {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.templateButton small {
+  color: rgba(23, 34, 48, 0.7);
+}
+
+.templateButton:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 168, 134, 0.45);
+  box-shadow: 0 14px 36px rgba(19, 36, 54, 0.08);
+}
+
+.workspace {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.formStack {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+  padding: 1.15rem;
+  border-radius: 1.6rem;
+  background: rgba(255, 252, 247, 0.88);
+  border: 1px solid rgba(19, 36, 54, 0.08);
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field span {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(19, 36, 54, 0.62);
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: 1px solid rgba(19, 36, 54, 0.12);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.95rem 1rem;
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: 2px solid rgba(0, 168, 134, 0.28);
+  border-color: rgba(0, 168, 134, 0.45);
+}
+
+.formActions {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.formHint {
+  margin: 0;
+  color: rgba(23, 34, 48, 0.68);
+  line-height: 1.55;
+}
+
+.historyPanel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.15rem;
+  border-radius: 1.6rem;
+  background: rgba(255, 252, 247, 0.88);
+  border: 1px solid rgba(19, 36, 54, 0.08);
+}
+
+.historyHeader {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.historyHeader h3 {
+  margin: 0.35rem 0 0;
+  font-size: 1.2rem;
+}
+
+.historyHeader p {
+  margin: 0;
+  color: rgba(23, 34, 48, 0.72);
+}
+
+.historyList {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.historyButton {
+  width: 100%;
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(19, 36, 54, 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.historyButton:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 168, 134, 0.4);
+  box-shadow: 0 14px 32px rgba(19, 36, 54, 0.08);
+}
+
+.historyMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: rgba(23, 34, 48, 0.62);
+}
+
+.historyButton strong {
+  font-size: 1rem;
+}
+
+.historyButton p,
+.historyEmpty,
+.copyStatus {
+  margin: 0;
+  color: rgba(23, 34, 48, 0.72);
+}
+
+.output {
+  display: grid;
+  gap: 1rem;
+}
+
+.scoreCard,
+.storyCard,
+.detailCard,
+.emptyState {
+  padding: 1.2rem;
+  border-radius: 1.6rem;
+  background: linear-gradient(160deg, rgba(19, 36, 54, 0.95), rgba(15, 29, 43, 0.9));
+  color: #f8f0e7;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scoreCard {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: start;
+}
+
+.scoreMeta,
+.listHeader,
+.resultActions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.scoreCard strong {
+  font-size: clamp(3rem, 9vw, 4.6rem);
+  line-height: 0.9;
+  color: #f1c27d;
+}
+
+.resultTitle {
+  margin: 0.1rem 0 0;
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.scoreLabel,
+.cardEyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: rgba(248, 240, 231, 0.64);
+}
+
+.storyCard h3,
+.emptyState h3 {
+  margin: 0.4rem 0 0.65rem;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  line-height: 1.02;
+}
+
+.generatedAt,
+.metaText {
+  color: rgba(248, 240, 231, 0.64);
+  font-size: 0.82rem;
+}
+
+.engineBadge,
+.severityBadge,
+.secondaryButton {
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.engineBadge,
+.severityBadge {
+  padding: 0.38rem 0.62rem;
+}
+
+.engineLive,
+.severityLow {
+  background: rgba(0, 168, 134, 0.18);
+  color: #c7ffe8;
+}
+
+.engineMock,
+.severityMedium {
+  background: rgba(241, 194, 125, 0.16);
+  color: #ffe5b0;
+}
+
+.severityHigh {
+  background: rgba(255, 124, 81, 0.16);
+  color: #ffd3c7;
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8f0e7;
+  padding: 0.7rem 0.95rem;
+  cursor: pointer;
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease,
+    background 150ms ease;
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.storyCard p,
+.scoreCard p,
+.detailCard p,
+.emptyState p {
+  margin: 0;
+  color: rgba(248, 240, 231, 0.78);
+}
+
+.twoUp {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.detailCard ul {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.detailCard li {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.detailCard li strong {
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.detailCard li small {
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.detailCard li p {
+  font-size: 0.95rem;
+}
+
+.detailCard li::before {
+  content: "";
+}
+
+.error {
+  margin: 0;
+  color: #9a2b10;
+}
+
+@media (max-width: 980px) {
+  .workspace,
+  .twoUp {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .form,
+  .scoreCard,
+  .storyCard,
+  .detailCard,
+  .emptyState,
+  .historyPanel {
+    padding: 1rem;
+    border-radius: 1.25rem;
+  }
+}
