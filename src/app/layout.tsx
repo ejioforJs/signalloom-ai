@@ -3,13 +3,14 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { SignalLoomLogo } from "@/components/signalloom-logo";
+import { contactDetails } from "@/data/site-content";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SignalLoom AI",
+  title: "SignalLoom | Signal Loom",
   description:
-    "SignalLoom is an AI decision-rehearsal platform by James Solomon that helps teams rehearse launches and critical decisions before they go live.",
+    "SignalLoom is the AI decision-rehearsal platform from Signal Loom, built by James Solomon to help teams rehearse launches and critical decisions before they go live.",
 };
 
 export default function RootLayout({
@@ -33,7 +34,11 @@ export default function RootLayout({
             </Link>
 
             <nav className="siteNav" aria-label="Primary navigation">
-              <Link href="/#capabilities">Capabilities</Link>
+              <Link href="/#product">Product</Link>
+              <Link href="/#how-it-works">How It Works</Link>
+              <Link href="/#founder">Founder</Link>
+              <Link href="/#security">Security</Link>
+              <Link href="/#faq">FAQ</Link>
               <Link href="/rehearse">Rehearse</Link>
             </nav>
 
@@ -47,7 +52,10 @@ export default function RootLayout({
           <footer className="siteFooter">
             <p>SignalLoom helps teams rehearse decisions before launch day arrives. Built by James Solomon.</p>
             <div>
-              <Link href="/">Home</Link>
+              <Link href="/#product">Product</Link>
+              <Link href="/security">Security</Link>
+              <Link href="/privacy">Privacy</Link>
+              <a href={`mailto:${contactDetails.email}`}>Contact</a>
               <Link href="/rehearse">Rehearsal Lab</Link>
             </div>
           </footer>

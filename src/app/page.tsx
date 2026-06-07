@@ -1,7 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { RehearsalLab } from "@/components/rehearsal-lab";
-import { capabilities, founderNote, metrics, pathways, pilotLoop } from "@/data/site-content";
+import {
+  capabilities,
+  companyFacts,
+  companyLinks,
+  contactDetails,
+  faqItems,
+  founderBio,
+  founderNote,
+  metrics,
+  pathways,
+  pilotLoop,
+  securityPrinciples,
+  tractionItems,
+} from "@/data/site-content";
 
 import styles from "./page.module.css";
 
@@ -22,8 +36,8 @@ export default function Home() {
             <Link href="/rehearse" className="pillButton">
               Open Rehearsal Lab
             </Link>
-            <Link href="#capabilities" className="ghostButton">
-              Explore Capabilities
+            <Link href="#product" className="ghostButton">
+              Explore Product
             </Link>
           </div>
 
@@ -88,16 +102,22 @@ export default function Home() {
       </section>
 
       <section className={styles.ribbon}>
+        <span>nvidia inception program</span>
         <span>Built for launch strategy</span>
         <span>pricing resets</span>
         <span>market entries</span>
         <span>incident response</span>
       </section>
 
-      <section className={styles.section} id="capabilities">
+      <section className={styles.section} id="product">
         <div className={styles.sectionIntro}>
-          <p className="eyebrow">What Makes It Different</p>
+          <p className="eyebrow">Product</p>
           <h2>Not another chatbot. A rehearsal system for high-stakes decisions.</h2>
+          <p>
+            SignalLoom is designed for real operating decisions, not generic prompts. The product
+            turns ambiguous strategic plans into structured guidance a team can review, challenge,
+            and act on before public rollout.
+          </p>
         </div>
 
         <div className={styles.cardGrid}>
@@ -111,10 +131,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.useCaseSection}>
+      <section className={styles.useCaseSection} id="how-it-works">
         <div className={styles.sectionIntro}>
-          <p className="eyebrow">Operating Lanes</p>
+          <p className="eyebrow">How It Works</p>
           <h2>Three rooms founders and operators keep coming back to.</h2>
+          <p>
+            The product is built around recurring, high-stakes decisions where teams need signal
+            before the market gives them consequences.
+          </p>
         </div>
 
         <div className={styles.pathGrid}>
@@ -147,18 +171,141 @@ export default function Home() {
         <RehearsalLab />
       </section>
 
-      <section className={styles.testimonialSection}>
+      <section className={styles.aboutSection} id="founder">
         <div className={styles.sectionIntro}>
-          <p className="eyebrow">Founder Note</p>
-          <h2>SignalLoom is being built by James Solomon as a focused decision-rehearsal platform.</h2>
+          <p className="eyebrow">Founder</p>
+          <h2>SignalLoom is a founder-led AI software product built by James Solomon.</h2>
+          <p>
+            The company is focused on helping teams make stronger launch and operating decisions
+            through structured rehearsal, scenario pressure-testing, and clearer execution prep.
+          </p>
         </div>
 
-        <div className={styles.testimonialGrid}>
-          <article className={styles.testimonialCard}>
-            <p>{founderNote.quote}</p>
-            <strong>{founderNote.name}</strong>
-            <span>{founderNote.role}</span>
-          </article>
+        <div className={styles.aboutGrid}>
+          <div className={styles.founderProfile}>
+            <div className={styles.founderImageWrap}>
+              <Image
+                src="/founder.png"
+                alt="James Solomon, Founder and CTO of Signal Loom"
+                width={720}
+                height={720}
+                className={styles.founderImage}
+                priority
+              />
+            </div>
+
+            <article className={styles.founderCard}>
+              <p>{founderNote.quote}</p>
+              <strong>{founderNote.name}</strong>
+              <span>{founderNote.role}</span>
+            </article>
+          </div>
+
+          <div className={styles.founderStack}>
+            <article className={styles.bioCard}>
+              <span className={styles.cardEyebrow}>Founder Bio</span>
+              <p>{founderBio}</p>
+            </article>
+
+            <div className={styles.factGrid}>
+              {companyFacts.map((fact) => (
+                <article key={fact.label} className={styles.factCard}>
+                  <span>{fact.label}</span>
+                  <strong>{fact.value}</strong>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.companySection} id="company">
+        <div className={styles.sectionIntro}>
+          <p className="eyebrow">Company</p>
+          <h2>Real company details, real contact paths, and early traction signals.</h2>
+          <p>
+            Signal Loom is being positioned as a serious startup company, not just a concept page.
+            Reviewers and partners should be able to verify who is building it, how to reach the
+            company, and what momentum already exists.
+          </p>
+        </div>
+
+        <div className={styles.companyGrid}>
+          <div className={styles.contactPanel}>
+            <article className={styles.contactCard}>
+              <span className={styles.cardEyebrow}>Contact</span>
+              <a href={`mailto:${contactDetails.email}`} className={styles.contactLink}>
+                {contactDetails.email}
+              </a>
+              <a href={contactDetails.phoneHref} className={styles.contactLink}>
+                {contactDetails.phoneDisplay}
+              </a>
+              <p>{contactDetails.location}</p>
+            </article>
+
+            <article className={styles.contactCard}>
+              <span className={styles.cardEyebrow}>Profiles</span>
+              <div className={styles.linkList}>
+                {companyLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.externalLink}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </article>
+          </div>
+
+          <div className={styles.tractionGrid}>
+            {tractionItems.map((item) => (
+              <article key={item.title} className={styles.tractionCard}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.securitySection} id="security">
+        <div className={styles.sectionIntro}>
+          <p className="eyebrow">Security</p>
+          <h2>Trust, product clarity, and honest data handling matter from day one.</h2>
+          <p>
+            SignalLoom is still founder-led and early-stage, but the product is being shaped with a
+            clear bias toward transparent inputs, predictable outputs, and infrastructure maturity
+            over time.
+          </p>
+        </div>
+
+        <div className={styles.securityGrid}>
+          {securityPrinciples.map((item) => (
+            <article key={item.title} className={styles.securityCard}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.faqSection} id="faq">
+        <div className={styles.sectionIntro}>
+          <p className="eyebrow">FAQ</p>
+          <h2>Everything a reviewer, partner, or early customer should understand quickly.</h2>
+        </div>
+
+        <div className={styles.faqList}>
+          {faqItems.map((item) => (
+            <details key={item.question} className={styles.faqItem}>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
         </div>
       </section>
 

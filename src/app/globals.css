@@ -121,6 +121,7 @@ select {
 .siteNav {
   display: inline-flex;
   gap: 1.2rem;
+  flex-wrap: wrap;
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
   background: rgba(255, 251, 245, 0.6);
@@ -189,6 +190,7 @@ select {
 .siteFooter div {
   display: inline-flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 820px) {

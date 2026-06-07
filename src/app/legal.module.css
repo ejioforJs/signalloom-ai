@@ -1,0 +1,98 @@
+.page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero,
+.section {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  background: rgba(255, 250, 244, 0.78);
+  border: 1px solid rgba(19, 36, 54, 0.08);
+  box-shadow: 0 28px 80px rgba(19, 36, 54, 0.08);
+}
+
+.copy {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 48rem;
+}
+
+.copy h1,
+.copy h2 {
+  margin: 0;
+  font-family:
+    "Trebuchet MS",
+    "Avenir Next Condensed",
+    sans-serif;
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+}
+
+.copy h1 {
+  font-size: clamp(3rem, 7vw, 5rem);
+}
+
+.copy h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.copy p,
+.section p,
+.section li {
+  margin: 0;
+  color: rgba(23, 34, 48, 0.74);
+  line-height: 1.7;
+}
+
+.section a {
+  color: #132436;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.1rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(19, 36, 54, 0.08);
+}
+
+.card h3,
+.section h2 {
+  margin: 0;
+}
+
+.list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero,
+  .section {
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .copy h1 {
+    font-size: clamp(2.6rem, 14vw, 3.8rem);
+  }
+}

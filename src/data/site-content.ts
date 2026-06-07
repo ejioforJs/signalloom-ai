@@ -1,7 +1,7 @@
 export const metrics = [
+  { value: "NVIDIA Inception", label: "accepted into the startup accelerator program" },
   { value: "Live AI", label: "with automatic local fallback" },
   { value: "Structured output", label: "brief, flashpoints, drills, proof points, and checklist" },
-  { value: "Recent rooms", label: "saved locally so teams can reopen prior runs fast" },
 ];
 
 export const capabilities = [
@@ -70,6 +70,132 @@ export const founderNote = {
   name: "James Solomon",
   role: "Founder & CTO, SignalLoom",
 };
+
+export const founderBio =
+  "James Solomon is the Founder and CTO of Signal Loom, where he is building SignalLoom, an AI decision-rehearsal platform for launches, pricing changes, expansions, and high-stakes operating decisions. He is leading the company across product strategy, software architecture, and go-to-market readiness, with a focus on turning complex decision-making into practical, structured software workflows. Signal Loom has also been accepted into the NVIDIA Inception program, reflecting the company’s focus on AI-native product development.";
+
+export const companyFacts = [
+  {
+    label: "Legal name",
+    value: "Signal Loom",
+  },
+  {
+    label: "Founder",
+    value: "James Solomon",
+  },
+  {
+    label: "Role",
+    value: "Founder & CTO",
+  },
+  {
+    label: "Category",
+    value: "AI decision-rehearsal software",
+  },
+  {
+    label: "Delivery",
+    value: "Browser-based product experience",
+  },
+  {
+    label: "Location",
+    value: "13 Maskara Street, Onuiyi Road, Nsukka",
+  },
+];
+
+export const companyLinks = [
+  {
+    label: "Founder LinkedIn",
+    href: "https://www.linkedin.com/in/james-solomon-b40493201?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+  },
+  {
+    label: "Company LinkedIn",
+    href: "https://www.linkedin.com/company/signal-loom/",
+  },
+  {
+    label: "Founder portfolio",
+    href: "https://www.james-solomon.site/",
+  },
+];
+
+export const contactDetails = {
+  email: "james12@signalloom.site",
+  phoneDisplay: "07032888613",
+  phoneHref: "tel:+2347032888613",
+  location: "13 Maskara Street, Onuiyi Road, Nsukka",
+};
+
+export const tractionItems = [
+  {
+    title: "NVIDIA Inception",
+    description:
+      "Signal Loom has been accepted into the NVIDIA Inception startup program, strengthening its positioning as an AI-native software company.",
+  },
+  {
+    title: "Founder-led build",
+    description:
+      "The company is being built directly by its founder and CTO, with product, infrastructure, and company messaging all being shaped in-house.",
+  },
+  {
+    title: "Live product experience",
+    description:
+      "SignalLoom is already deployed as a browser-based product experience with a working rehearsal flow, structured outputs, and founder-ready demos.",
+  },
+];
+
+export const securityPrinciples = [
+  {
+    title: "Intentional Inputs",
+    description:
+      "SignalLoom only asks for the initiative, audience, tension, and forecast horizon needed to generate a rehearsal room.",
+  },
+  {
+    title: "Structured Outputs",
+    description:
+      "The product returns a consistent operating packet: readiness score, flashpoints, drills, proof points, and launch checklist.",
+  },
+  {
+    title: "Local Recent-Room Memory",
+    description:
+      "Recent rooms are currently stored in the browser so users can reopen previous runs without a full account system.",
+  },
+  {
+    title: "Live AI With Fallback",
+    description:
+      "Deployments can run live model-backed generation, and the app falls back to a local engine when a live AI run is unavailable.",
+  },
+];
+
+export const faqItems = [
+  {
+    question: "What is SignalLoom?",
+    answer:
+      "SignalLoom is an AI decision-rehearsal platform for founders, product teams, strategy leads, and operators. It helps teams pressure-test launches, pricing shifts, expansions, and response plans before they go live.",
+  },
+  {
+    question: "What does the product return?",
+    answer:
+      "Each run generates a readiness score, a signal headline, key flashpoints, stakeholder perspectives, drills, proof points, and an execution checklist that a team can act on immediately.",
+  },
+  {
+    question: "Does SignalLoom require installation?",
+    answer:
+      "No. SignalLoom is built as a browser-based web product. Teams can open the app, enter a scenario, and generate a rehearsal room directly in the interface.",
+  },
+  {
+    question: "How is data handled in the current product?",
+    answer:
+      "In the current version, recent rooms are stored locally in the browser for convenience. When live AI generation is enabled on a deployment, scenario inputs may be sent to the configured model provider to produce the output.",
+  },
+  {
+    question: "Who is building SignalLoom?",
+    answer:
+      "SignalLoom is founder-led and built by James Solomon, who is serving as Founder and CTO while shaping the product, infrastructure, and go-to-market foundation.",
+  },
+  {
+    question: "What traction does Signal Loom have today?",
+    answer:
+      "Signal Loom has been accepted into the NVIDIA Inception program and is being developed as a live browser-based product with working AI-backed rehearsal flows and supporting company pages.",
+  },
+];
 
 export const scenarioTemplates = [
   {
