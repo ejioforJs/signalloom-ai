@@ -64,15 +64,31 @@ export const pilotLoop = [
   },
 ];
 
-export const founderNote = {
-  quote:
-    "I am building SignalLoom to help teams review important decisions before launch. The goal is to make planning clearer, coordination easier, and avoidable mistakes less likely.",
-  name: "James Solomon",
-  role: "Founder & CTO, SignalLoom",
-};
+export const foundingTeam = [
+  {
+    name: "James Solomon",
+    role: "Founder, SignalLoom",
+    imageSrc: "/founder.png",
+    imageAlt: "James Solomon, Founder of Signal Loom",
+    note:
+      "I am building SignalLoom to help teams review important decisions before launch. The goal is to make planning clearer, coordination easier, and avoidable mistakes less likely.",
+    bio:
+      "James Solomon is the founder of Signal Loom. He leads product strategy, application development, and the broader direction of SignalLoom as the company builds a practical decision-review workflow for launches, pricing changes, and market expansion plans.",
+  },
+  {
+    name: "Ekene Nweke",
+    role: "CTO, SignalLoom",
+    imageSrc: "/signalloomCofounder.jpeg",
+    imageAlt: "Ekene Nweke, CTO of Signal Loom",
+    note:
+      "I focus on building reliable product systems that make SignalLoom faster, clearer, and easier for teams to use in real decision workflows.",
+    bio:
+      "Ekene Nweke is the CTO of Signal Loom. He helps shape the product's technical architecture and engineering execution as SignalLoom develops its AI-assisted decision-review platform.",
+  },
+];
 
-export const founderBio =
-  "James Solomon is the Founder and CTO of Signal Loom. He is building SignalLoom to help teams review launches, pricing changes, market expansion plans, and other high-impact decisions before they go live. He leads product strategy, application development, and the technical foundation of the company. Signal Loom has also been accepted into the NVIDIA Inception program.";
+export const teamSummary =
+  "Signal Loom is being built by a small founding team focused on practical product execution, clear decision support, and a strong technical foundation.";
 
 export const companyFacts = [
   {
@@ -84,8 +100,8 @@ export const companyFacts = [
     value: "James Solomon",
   },
   {
-    label: "Role",
-    value: "Founder & CTO",
+    label: "CTO",
+    value: "Ekene Nweke",
   },
   {
     label: "Category",
@@ -105,6 +121,10 @@ export const companyLinks = [
   {
     label: "Founder LinkedIn",
     href: "https://www.linkedin.com/in/james-solomon-b40493201?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+  },
+  {
+    label: "Ekene Nweke LinkedIn",
+    href: "https://www.linkedin.com/in/paul-nweke-164803370/",
   },
   {
     label: "Company LinkedIn",
@@ -188,7 +208,7 @@ export const faqItems = [
   {
     question: "Who is building SignalLoom?",
     answer:
-      "SignalLoom is being built by James Solomon, who serves as Founder and CTO of Signal Loom.",
+      "SignalLoom is being built by James Solomon, the founder of Signal Loom, together with Ekene Nweke, who serves as CTO.",
   },
   {
     question: "What traction does Signal Loom have today?",

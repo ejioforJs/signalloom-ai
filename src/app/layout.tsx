@@ -36,7 +36,7 @@ export default function RootLayout({
             <nav className="siteNav" aria-label="Primary navigation">
               <Link href="/#product">Product</Link>
               <Link href="/#how-it-works">How It Works</Link>
-              <Link href="/#founder">Founder</Link>
+              <Link href="/#team">Team</Link>
               <Link href="/#security">Security</Link>
               <Link href="/#faq">FAQ</Link>
               <Link href="/rehearse">Rehearse</Link>

@@ -395,6 +395,13 @@
     linear-gradient(180deg, rgba(255, 250, 244, 0.84), rgba(244, 236, 227, 0.72));
 }
 
+.aboutSection {
+  background:
+    radial-gradient(circle at 14% 14%, rgba(255, 122, 89, 0.12), transparent 24%),
+    radial-gradient(circle at 86% 18%, rgba(4, 154, 132, 0.12), transparent 22%),
+    linear-gradient(180deg, rgba(255, 252, 247, 0.9), rgba(244, 237, 228, 0.78));
+}
+
 .pilotPanel {
   display: grid;
   gap: 1rem;
@@ -412,8 +419,8 @@
 }
 
 .aboutGrid,
-.founderProfile,
-.founderStack,
+.teamShowcase,
+.teamGrid,
 .companyGrid,
 .contactPanel,
 .factGrid,
@@ -424,13 +431,26 @@
   gap: 1rem;
 }
 
-.founderProfile,
-.founderStack,
 .contactPanel {
   align-content: start;
 }
 
-.founderImageWrap {
+.teamShowcase {
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  align-items: start;
+}
+
+.teamGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.teamMemberCard {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.memberImagePanel {
   position: relative;
   overflow: hidden;
   min-height: 26rem;
@@ -440,12 +460,16 @@
   box-shadow: var(--shadow-lg);
 }
 
-.founderImageWrap::after {
+.teamMemberCard .memberImagePanel {
+  min-height: 28rem;
+}
+
+.memberImagePanel::after {
   content: "";
   position: absolute;
   inset: auto 0 0 0;
-  height: 38%;
-  background: linear-gradient(180deg, transparent, rgba(14, 28, 43, 0.26));
+  height: 58%;
+  background: linear-gradient(180deg, transparent, rgba(14, 28, 43, 0.82));
 }
 
 .founderImage {
@@ -455,16 +479,165 @@
   display: block;
 }
 
-.founderCard,
-.bioCard,
+.memberOverlay {
+  position: absolute;
+  inset: auto 1rem 1rem 1rem;
+  z-index: 1;
+  display: grid;
+  gap: 0.45rem;
+  color: #f8f3ea;
+}
+
+.memberRole {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  color: rgba(248, 243, 234, 0.92);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.memberName {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  color: #fff7ef;
+}
+
+.memberNoteCard,
 .contactCard {
   align-content: start;
 }
 
+.memberNoteCard {
+  position: relative;
+  padding: 1rem 1.05rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(16, 33, 51, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.62));
+  box-shadow: var(--shadow-sm);
+}
+
+.memberNoteCard p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.teamRail {
+  position: relative;
+  display: grid;
+  gap: 1.15rem;
+  padding: 1.35rem;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(circle at 82% 18%, rgba(141, 232, 216, 0.12), transparent 28%),
+    linear-gradient(160deg, rgba(14, 28, 43, 0.98), rgba(18, 39, 58, 0.94));
+  box-shadow: var(--shadow-xl);
+}
+
+.teamSummaryCard {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.teamRail::after {
+  content: "";
+  position: absolute;
+  inset: auto 1.2rem 0 1.2rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent 80%);
+}
+
+.teamSummaryCard strong {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #f8f3ea;
+  letter-spacing: -0.03em;
+}
+
+.teamSummaryCard p {
+  margin: 0;
+  color: rgba(248, 243, 234, 0.76);
+  line-height: 1.7;
+}
+
+.teamSummaryCard .cardEyebrow {
+  color: rgba(248, 243, 234, 0.58);
+}
+
+.teamDivider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent 85%);
+}
+
+.teamBioList {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.teamBioItem {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.05rem 0;
+}
+
+.teamBioItem strong {
+  margin: 0;
+  font-size: 1.08rem;
+  color: #fff7ef;
+}
+
+.teamBioItem p {
+  margin: 0;
+  color: rgba(248, 243, 234, 0.78);
+  line-height: 1.68;
+}
+
+.teamBioItem .cardEyebrow {
+  color: rgba(248, 243, 234, 0.56);
+}
+
+.teamFactsGrid,
 .factGrid,
 .securityGrid,
 .tractionGrid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.teamFactsGrid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.teamFact {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.9rem 0.95rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.teamFact span {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(248, 243, 234, 0.56);
+}
+
+.teamFact strong {
+  margin: 0;
+  color: #fff7ef;
+  font-size: 1rem;
 }
 
 .factCard span {
@@ -578,7 +751,8 @@
 @media (max-width: 1100px) {
   .hero,
   .cta,
-  .companyGrid {
+  .companyGrid,
+  .teamShowcase {
     grid-template-columns: 1fr;
   }
 
@@ -588,6 +762,8 @@
   .pathGrid,
   .loopGrid,
   .aboutGrid,
+  .teamGrid,
+  .teamFactsGrid,
   .factGrid,
   .securityGrid,
   .tractionGrid {
@@ -633,7 +809,7 @@
     width: 100%;
   }
 
-  .founderImageWrap {
+  .teamMemberCard .memberImagePanel {
     min-height: 20rem;
   }
 }

@@ -8,12 +8,12 @@ import {
   companyLinks,
   contactDetails,
   faqItems,
-  founderBio,
-  founderNote,
+  foundingTeam,
   metrics,
   pathways,
   pilotLoop,
   securityPrinciples,
+  teamSummary,
   tractionItems,
 } from "@/data/site-content";
 
@@ -166,51 +166,71 @@ export default function Home() {
         <RehearsalLab />
       </section>
 
-      <section className={styles.aboutSection} id="founder">
+      <section className={styles.aboutSection} id="team">
         <div className={styles.sectionIntro}>
-          <p className="eyebrow">Founder</p>
-          <h2>SignalLoom is being built by James Solomon.</h2>
+          <p className="eyebrow">Team</p>
+          <h2>SignalLoom is being built by James Solomon and Ekene Nweke.</h2>
           <p>
             Signal Loom is focused on helping teams make better launch and operating decisions
-            through structured review and clearer execution planning.
+            through structured review, clearer execution planning, and a solid technical foundation.
           </p>
         </div>
 
-        <div className={styles.aboutGrid}>
-          <div className={styles.founderProfile}>
-            <div className={styles.founderImageWrap}>
-              <Image
-                src="/founder.png"
-                alt="James Solomon, Founder and CTO of Signal Loom"
-                width={720}
-                height={720}
-                className={styles.founderImage}
-                priority
-              />
-            </div>
+        <div className={styles.teamShowcase}>
+          <div className={styles.teamGrid}>
+            {foundingTeam.map((member) => (
+              <article key={member.name} className={styles.teamMemberCard}>
+                <div className={styles.memberImagePanel}>
+                  <Image
+                    src={member.imageSrc}
+                    alt={member.imageAlt}
+                    width={720}
+                    height={720}
+                    className={styles.founderImage}
+                    priority={member.name === "James Solomon"}
+                  />
 
-            <article className={styles.founderCard}>
-              <p>{founderNote.quote}</p>
-              <strong>{founderNote.name}</strong>
-              <span>{founderNote.role}</span>
-            </article>
+                  <div className={styles.memberOverlay}>
+                    <span className={styles.memberRole}>{member.role}</span>
+                    <h3 className={styles.memberName}>{member.name}</h3>
+                  </div>
+                </div>
+
+                <div className={styles.memberNoteCard}>
+                  <p>{member.note}</p>
+                </div>
+              </article>
+            ))}
           </div>
 
-          <div className={styles.founderStack}>
-            <article className={styles.bioCard}>
-              <span className={styles.cardEyebrow}>Founder Bio</span>
-              <p>{founderBio}</p>
-            </article>
+          <article className={styles.teamRail}>
+            <div className={styles.teamSummaryCard}>
+              <span className={styles.cardEyebrow}>Founding Team</span>
+              <strong>Product, strategy, and engineering under one roof.</strong>
+              <p>{teamSummary}</p>
+            </div>
 
-            <div className={styles.factGrid}>
+            <div className={styles.teamDivider} />
+
+            <div className={styles.teamBioList}>
+              {foundingTeam.map((member) => (
+                <article key={member.name} className={styles.teamBioItem}>
+                  <span className={styles.cardEyebrow}>{member.role}</span>
+                  <strong>{member.name}</strong>
+                  <p>{member.bio}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className={styles.teamFactsGrid}>
               {companyFacts.map((fact) => (
-                <article key={fact.label} className={styles.factCard}>
+                <article key={fact.label} className={styles.teamFact}>
                   <span>{fact.label}</span>
                   <strong>{fact.value}</strong>
                 </article>
               ))}
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
