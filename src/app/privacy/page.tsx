@@ -7,7 +7,7 @@ import styles from "../legal.module.css";
 export const metadata: Metadata = {
   title: "Privacy | SignalLoom",
   description:
-    "Privacy overview for SignalLoom, the AI decision-rehearsal platform built by James Solomon.",
+    "Privacy overview for SignalLoom, the decision-planning product from Signal Loom.",
 };
 
 export default function PrivacyPage() {
@@ -35,23 +35,23 @@ export default function PrivacyPage() {
           <article className={styles.card}>
             <h3>Scenario content</h3>
             <p>
-              Users provide an initiative, an audience under pressure, the tension in the room, and
-              a forecast horizon so SignalLoom can generate a rehearsal output.
+              Users provide an initiative, an audience under pressure, a main concern, and a
+              forecast horizon so SignalLoom can generate a result.
             </p>
           </article>
 
           <article className={styles.card}>
             <h3>Generated rehearsal output</h3>
             <p>
-              The product returns a structured packet that can include readiness scoring,
-              flashpoints, drills, stakeholder views, proof points, and a launch checklist.
+              The product returns a structured result that can include readiness scoring, key risks,
+              stakeholder views, recommended reviews, evidence points, and a checklist.
             </p>
           </article>
 
           <article className={styles.card}>
             <h3>Local browser history</h3>
             <p>
-              Recent rehearsal rooms are stored in the user&apos;s browser so previously generated runs
+              Recent analyses are stored in the user&apos;s browser so previously generated results
               can be reopened without re-entering the full scenario.
             </p>
           </article>
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
 
         <ul className={styles.list}>
           <li>The current product does not yet provide full user accounts or shared team workspaces.</li>
-          <li>Recent room history is local to the browser rather than a synced multi-device account.</li>
+          <li>Recent analysis history is local to the browser rather than a synced multi-device account.</li>
           <li>The product is best used with thoughtful discretion for sensitive internal strategy content while enterprise controls are still being built.</li>
           <li>Additional privacy controls, persistent data settings, and formal support contacts are planned as the company matures.</li>
         </ul>

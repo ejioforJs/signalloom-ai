@@ -1,78 +1,78 @@
 export const metrics = [
   { value: "NVIDIA Inception", label: "accepted into the startup accelerator program" },
-  { value: "Live AI", label: "with automatic local fallback" },
-  { value: "Structured output", label: "brief, flashpoints, drills, proof points, and checklist" },
+  { value: "Browser-based app", label: "works directly in the web interface" },
+  { value: "Structured output", label: "summary, risks, stakeholder input, and action steps" },
 ];
 
 export const capabilities = [
   {
-    title: "Synthetic Stakeholder Rooms",
+    title: "Stakeholder Review",
     description:
-      "Pull a founder memo into a room with a skeptical customer, a finance lead, a regulator, and a copycat rival.",
+      "Review a decision from the perspective of customers, finance, operations, and other affected stakeholders.",
   },
   {
-    title: "Decision Tension Mapping",
+    title: "Risk Mapping",
     description:
-      "SignalLoom surfaces where trust, pricing, adoption, or policy pressure are most likely to crack first.",
+      "Identify where trust, pricing, adoption, execution, or compliance issues are most likely to appear first.",
   },
   {
-    title: "Aftercare Forecasts",
+    title: "Launch Planning",
     description:
-      "The platform models the first 72 hours after launch so teams can plan support, communications, and escalation paths.",
+      "Prepare for the first days after launch with recommended communication, support, and escalation steps.",
   },
   {
-    title: "Executive Memory",
+    title: "Reusable Analysis",
     description:
-      "Every rehearsal leaves behind reusable drills, risk language, and response patterns your next team can inherit.",
+      "Keep a structured record of each review so teams can revisit earlier decisions and compare scenarios.",
   },
 ];
 
 export const pathways = [
   {
-    title: "Launch Rooms",
+    title: "Product Launches",
     description:
-      "Pressure-test new products before your first headline, onboarding flow, or pricing page goes live.",
+      "Review new products before the announcement, onboarding flow, or pricing page goes live.",
   },
   {
-    title: "Pricing Shifts",
+    title: "Pricing Changes",
     description:
-      "Simulate how revenue teams, power users, and competitors react when packaging changes hit the market.",
+      "Review how revenue teams, existing users, and the market may respond to pricing updates.",
   },
   {
-    title: "Incident Recovery",
+    title: "Incident Response",
     description:
-      "Practice the first public response to outages, trust failures, and compliance friction before a real escalation arrives.",
+      "Prepare the first response to outages, trust issues, and compliance concerns before they escalate.",
   },
 ];
 
 export const pilotLoop = [
   {
-    step: "Drop in a memo",
-    detail: "Paste a launch idea, policy update, roadmap bet, or postmortem outline.",
+    step: "Describe the plan",
+    detail: "Enter the initiative, target audience, main concern, and review horizon.",
   },
   {
-    step: "Spin up the room",
-    detail: "SignalLoom maps stakeholder voices and predicts where the story bends under pressure.",
+    step: "Review the analysis",
+    detail: "SignalLoom highlights likely risks, stakeholder concerns, and the overall readiness score.",
   },
   {
-    step: "Run the drills",
-    detail: "Teams rehearse objections, rewrite weak moments, and decide what to change before launch day.",
+    step: "Plan next steps",
+    detail: "Use the recommended actions, evidence points, and timeline to decide what needs to change.",
   },
   {
-    step: "Keep the memory",
-    detail: "The room becomes a reusable operating playbook for future launches and hires.",
+    step: "Save the result",
+    detail: "Keep the analysis available in the browser so the team can reopen it later.",
   },
 ];
 
 export const founderNote = {
   quote:
-    "I am building SignalLoom so founders and operators can pressure-test decisions before customers, regulators, or internal teams feel the blast radius. The product should help teams move with more clarity, sharper judgment, and fewer avoidable surprises.",
+    "I am building SignalLoom to help teams review important decisions before launch. The goal is to make planning clearer, coordination easier, and avoidable mistakes less likely.",
   name: "James Solomon",
   role: "Founder & CTO, SignalLoom",
 };
 
 export const founderBio =
-  "James Solomon is the Founder and CTO of Signal Loom, where he is building SignalLoom, an AI decision-rehearsal platform for launches, pricing changes, expansions, and high-stakes operating decisions. He is leading the company across product strategy, software architecture, and go-to-market readiness, with a focus on turning complex decision-making into practical, structured software workflows. Signal Loom has also been accepted into the NVIDIA Inception program, reflecting the company’s focus on AI-native product development.";
+  "James Solomon is the Founder and CTO of Signal Loom. He is building SignalLoom to help teams review launches, pricing changes, market expansion plans, and other high-impact decisions before they go live. He leads product strategy, application development, and the technical foundation of the company. Signal Loom has also been accepted into the NVIDIA Inception program.";
 
 export const companyFacts = [
   {
@@ -89,7 +89,7 @@ export const companyFacts = [
   },
   {
     label: "Category",
-    value: "AI decision-rehearsal software",
+    value: "Decision-planning software",
   },
   {
     label: "Delivery",
@@ -127,17 +127,17 @@ export const tractionItems = [
   {
     title: "NVIDIA Inception",
     description:
-      "Signal Loom has been accepted into the NVIDIA Inception startup program, strengthening its positioning as an AI-native software company.",
+      "Signal Loom has been accepted into the NVIDIA Inception startup program.",
   },
   {
-    title: "Founder-led build",
+    title: "Independent product build",
     description:
-      "The company is being built directly by its founder and CTO, with product, infrastructure, and company messaging all being shaped in-house.",
+      "The product, website, and application workflow are being built directly in-house by the founding team.",
   },
   {
-    title: "Live product experience",
+    title: "Working web product",
     description:
-      "SignalLoom is already deployed as a browser-based product experience with a working rehearsal flow, structured outputs, and founder-ready demos.",
+      "SignalLoom already includes a working browser-based workflow with structured output for scenario review.",
   },
 ];
 
@@ -145,22 +145,22 @@ export const securityPrinciples = [
   {
     title: "Intentional Inputs",
     description:
-      "SignalLoom only asks for the initiative, audience, tension, and forecast horizon needed to generate a rehearsal room.",
+      "SignalLoom asks for the initiative, audience, main concern, and time horizon needed to generate a scenario review.",
   },
   {
     title: "Structured Outputs",
     description:
-      "The product returns a consistent operating packet: readiness score, flashpoints, drills, proof points, and launch checklist.",
+      "The product returns a consistent result with a readiness score, summary, risk list, stakeholder input, and action steps.",
   },
   {
-    title: "Local Recent-Room Memory",
+    title: "Local Recent History",
     description:
-      "Recent rooms are currently stored in the browser so users can reopen previous runs without a full account system.",
+      "Recent analyses are stored in the browser so users can reopen previous results without a full account system.",
   },
   {
     title: "Live AI With Fallback",
     description:
-      "Deployments can run live model-backed generation, and the app falls back to a local engine when a live AI run is unavailable.",
+      "Deployments can run live model-backed generation, and the app falls back to a local engine when the live service is unavailable.",
   },
 ];
 
@@ -168,32 +168,32 @@ export const faqItems = [
   {
     question: "What is SignalLoom?",
     answer:
-      "SignalLoom is an AI decision-rehearsal platform for founders, product teams, strategy leads, and operators. It helps teams pressure-test launches, pricing shifts, expansions, and response plans before they go live.",
+      "SignalLoom is a decision-planning product for founders, product teams, strategy leads, and operators. It helps teams review launches, pricing changes, expansions, and response plans before they go live.",
   },
   {
     question: "What does the product return?",
     answer:
-      "Each run generates a readiness score, a signal headline, key flashpoints, stakeholder perspectives, drills, proof points, and an execution checklist that a team can act on immediately.",
+      "Each run generates a readiness score, a summary, key risks, stakeholder perspectives, recommended reviews, evidence points, and a checklist a team can act on immediately.",
   },
   {
     question: "Does SignalLoom require installation?",
     answer:
-      "No. SignalLoom is built as a browser-based web product. Teams can open the app, enter a scenario, and generate a rehearsal room directly in the interface.",
+      "No. SignalLoom is a browser-based web product. Teams can open the app, enter a scenario, and generate a review directly in the interface.",
   },
   {
     question: "How is data handled in the current product?",
     answer:
-      "In the current version, recent rooms are stored locally in the browser for convenience. When live AI generation is enabled on a deployment, scenario inputs may be sent to the configured model provider to produce the output.",
+      "In the current version, recent analyses are stored locally in the browser for convenience. When live AI generation is enabled on a deployment, scenario inputs may be sent to the configured model provider to produce the output.",
   },
   {
     question: "Who is building SignalLoom?",
     answer:
-      "SignalLoom is founder-led and built by James Solomon, who is serving as Founder and CTO while shaping the product, infrastructure, and go-to-market foundation.",
+      "SignalLoom is being built by James Solomon, who serves as Founder and CTO of Signal Loom.",
   },
   {
     question: "What traction does Signal Loom have today?",
     answer:
-      "Signal Loom has been accepted into the NVIDIA Inception program and is being developed as a live browser-based product with working AI-backed rehearsal flows and supporting company pages.",
+      "Signal Loom has been accepted into the NVIDIA Inception program and already has a working browser-based product with a functioning scenario review workflow and supporting company pages.",
   },
 ];
 
@@ -229,19 +229,19 @@ export const scenarioTemplates = [
 
 export const artifacts = [
   {
-    title: "Signal Headline",
-    description: "The one sentence most likely to define how this decision is remembered if nothing changes.",
+    title: "Summary",
+    description: "A short statement of how the decision is likely to be understood if nothing changes.",
   },
   {
-    title: "Flashpoints",
-    description: "The sharpest trust, pricing, adoption, or policy pressures hiding inside your plan.",
+    title: "Key Risks",
+    description: "The main trust, pricing, adoption, operational, or policy issues inside the plan.",
   },
   {
-    title: "Drill Set",
-    description: "Concrete rehearsal prompts your team can run before launch day or before an executive review.",
+    title: "Recommended Reviews",
+    description: "Specific review prompts your team can use before launch day or before an executive meeting.",
   },
   {
-    title: "72-Hour Map",
-    description: "A time-based forecast of what happens right after the announcement lands in the real world.",
+    title: "Timeline",
+    description: "A time-based view of what is likely to happen soon after the decision becomes public.",
   },
 ];

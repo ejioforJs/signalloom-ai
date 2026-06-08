@@ -8,13 +8,13 @@ export default function RehearsePage() {
     <main className={styles.page}>
       <section className={styles.intro}>
         <div className={styles.copy}>
-          <p className="eyebrow">Scenario Studio</p>
-          <h1>Spin up a rehearsal room and see where the plan bends first.</h1>
+          <p className="eyebrow">Scenario Review</p>
+          <h1>Review a launch or product decision before it goes live.</h1>
           <p>
-            This page is the operating workspace for SignalLoom: choose a scenario, tune the
-            pressure in the room, and generate a decision-ready set of signals. When an OpenAI key
-            is configured, the room runs live against the model and keeps a local fallback
-            available for uninterrupted use.
+            This is the main SignalLoom workspace. Choose a scenario, describe the main concern,
+            and generate a structured review with risks, stakeholder input, and recommended next
+            steps. If live AI is configured, the product uses it and keeps a local fallback option
+            available.
           </p>
         </div>
 
@@ -32,8 +32,8 @@ export default function RehearsePage() {
 
       <section className={styles.artifactSection}>
         <div className={styles.copy}>
-          <p className="eyebrow">What The Room Returns</p>
-          <h2>Every run produces an operating packet, not just a paragraph of text.</h2>
+          <p className="eyebrow">What You Get</p>
+          <h2>Each review produces structured output your team can use.</h2>
         </div>
 
         <div className={styles.artifactGrid}>

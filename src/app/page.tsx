@@ -24,12 +24,12 @@ export default function Home() {
     <main className={styles.main}>
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
-          <p className="eyebrow">AI Decision Rehearsal</p>
-          <h1>Train your next launch against futures that have not happened yet.</h1>
+          <p className="eyebrow">Decision Planning Software</p>
+          <h1>Review launches, pricing changes, and market plans before they go live.</h1>
           <p className={styles.heroText}>
-            SignalLoom helps product, strategy, and operations teams rehearse critical moves before
-            reality makes the first move. Launches, pricing changes, expansions, and response plans
-            can all be pressure-tested in one AI-guided room.
+            SignalLoom helps product, strategy, and operations teams review important decisions
+            before release. It gives teams a structured way to assess risk, stakeholder concerns,
+            and next steps.
           </p>
 
           <div className={styles.heroActions}>
@@ -53,48 +53,43 @@ export default function Home() {
 
         <aside className={styles.heroConsole}>
           <div className={styles.consoleTop}>
-            <span>Founder-led product</span>
-            <span className={styles.liveTag}>live platform</span>
+            <span>Product overview</span>
+            <span className={styles.liveTag}>web app</span>
           </div>
 
           <div className={styles.consoleBody}>
-            <div>
-              <p className={styles.consoleLabel}>Built by</p>
-              <h2>James Solomon</h2>
-            </div>
-
             <div className={styles.scoreBlock}>
-              <span>mission</span>
-              <strong>Clarity</strong>
+              <span>purpose</span>
+              <strong>Review risk early</strong>
               <small>
-                Give teams a disciplined way to rehearse decisions before customers, partners, or
-                regulators react in the real world.
+                Help teams understand likely objections, execution gaps, and launch risks before a
+                decision becomes public.
               </small>
             </div>
 
             <div className={styles.consoleGrid}>
               <article>
-                <p className={styles.consoleLabel}>Core output</p>
-                <strong>Readiness score, flashpoints, drills, proof points, and launch checklist.</strong>
+                <p className={styles.consoleLabel}>What you get</p>
+                <strong>Readiness score, key risks, stakeholder input, and recommended next steps.</strong>
               </article>
               <article>
-                <p className={styles.consoleLabel}>Operating mode</p>
-                <strong>Live AI with local fallback, recent-room memory, and structured output.</strong>
+                <p className={styles.consoleLabel}>How it runs</p>
+                <strong>Browser-based workflow with live AI generation and a local fallback option.</strong>
               </article>
             </div>
 
             <div className={styles.timeline}>
               <div>
                 <span>Input</span>
-                <p>Paste the initiative, audience, tension, and forecast horizon.</p>
+                <p>Enter the initiative, audience, main concern, and review horizon.</p>
               </div>
               <div>
-                <span>Room</span>
-                <p>SignalLoom maps stakeholders, objections, and first-order execution risks.</p>
+                <span>Analysis</span>
+                <p>SignalLoom reviews the scenario and highlights likely issues and stakeholder concerns.</p>
               </div>
               <div>
-                <span>Action</span>
-                <p>Your team leaves with concrete execution steps instead of vague AI copy.</p>
+                <span>Output</span>
+                <p>Your team gets a structured result it can use in planning and internal review.</p>
               </div>
             </div>
           </div>
@@ -103,7 +98,7 @@ export default function Home() {
 
       <section className={styles.ribbon}>
         <span>nvidia inception program</span>
-        <span>Built for launch strategy</span>
+        <span>launch planning</span>
         <span>pricing resets</span>
         <span>market entries</span>
         <span>incident response</span>
@@ -112,11 +107,11 @@ export default function Home() {
       <section className={styles.section} id="product">
         <div className={styles.sectionIntro}>
           <p className="eyebrow">Product</p>
-          <h2>Not another chatbot. A rehearsal system for high-stakes decisions.</h2>
+          <h2>Structured decision review for teams making important changes.</h2>
           <p>
-            SignalLoom is designed for real operating decisions, not generic prompts. The product
-            turns ambiguous strategic plans into structured guidance a team can review, challenge,
-            and act on before public rollout.
+            SignalLoom is built for practical planning. Instead of a generic text response, the
+            product organizes a scenario into clear risks, stakeholder concerns, timelines, and
+            action items.
           </p>
         </div>
 
@@ -134,10 +129,10 @@ export default function Home() {
       <section className={styles.useCaseSection} id="how-it-works">
         <div className={styles.sectionIntro}>
           <p className="eyebrow">How It Works</p>
-          <h2>Three rooms founders and operators keep coming back to.</h2>
+          <h2>Common ways teams can use SignalLoom.</h2>
           <p>
-            The product is built around recurring, high-stakes decisions where teams need signal
-            before the market gives them consequences.
+            The product focuses on situations where a team needs a clear review before making a
+            public or customer-facing change.
           </p>
         </div>
 
@@ -152,8 +147,8 @@ export default function Home() {
 
         <div className={styles.pilotPanel}>
           <div className={styles.sectionIntro}>
-            <p className="eyebrow">How The Loop Works</p>
-            <h2>From raw memo to a reusable playbook in four moves.</h2>
+            <p className="eyebrow">Workflow</p>
+            <h2>From scenario to action plan in four steps.</h2>
           </div>
 
           <div className={styles.loopGrid}>
@@ -174,10 +169,10 @@ export default function Home() {
       <section className={styles.aboutSection} id="founder">
         <div className={styles.sectionIntro}>
           <p className="eyebrow">Founder</p>
-          <h2>SignalLoom is a founder-led AI software product built by James Solomon.</h2>
+          <h2>SignalLoom is being built by James Solomon.</h2>
           <p>
-            The company is focused on helping teams make stronger launch and operating decisions
-            through structured rehearsal, scenario pressure-testing, and clearer execution prep.
+            Signal Loom is focused on helping teams make better launch and operating decisions
+            through structured review and clearer execution planning.
           </p>
         </div>
 
@@ -222,11 +217,10 @@ export default function Home() {
       <section className={styles.companySection} id="company">
         <div className={styles.sectionIntro}>
           <p className="eyebrow">Company</p>
-          <h2>Real company details, real contact paths, and early traction signals.</h2>
+          <h2>Company details, contact information, and current traction.</h2>
           <p>
-            Signal Loom is being positioned as a serious startup company, not just a concept page.
-            Reviewers and partners should be able to verify who is building it, how to reach the
-            company, and what momentum already exists.
+            This section gives reviewers and partners the core details they need: who is building
+            the company, how to reach it, and what progress has already been made.
           </p>
         </div>
 
@@ -275,11 +269,10 @@ export default function Home() {
       <section className={styles.securitySection} id="security">
         <div className={styles.sectionIntro}>
           <p className="eyebrow">Security</p>
-          <h2>Trust, product clarity, and honest data handling matter from day one.</h2>
+          <h2>Current product handling and planned security improvements.</h2>
           <p>
-            SignalLoom is still founder-led and early-stage, but the product is being shaped with a
-            clear bias toward transparent inputs, predictable outputs, and infrastructure maturity
-            over time.
+            SignalLoom is still early-stage. These pages explain what the product stores today and
+            what controls are planned next.
           </p>
         </div>
 
@@ -296,7 +289,7 @@ export default function Home() {
       <section className={styles.faqSection} id="faq">
         <div className={styles.sectionIntro}>
           <p className="eyebrow">FAQ</p>
-          <h2>Everything a reviewer, partner, or early customer should understand quickly.</h2>
+          <h2>Key questions about the product.</h2>
         </div>
 
         <div className={styles.faqList}>
@@ -311,11 +304,11 @@ export default function Home() {
 
       <section className={styles.cta}>
         <div>
-          <p className="eyebrow">Ready To Explore</p>
-          <h2>From memo to simulated quarter in one room.</h2>
+          <p className="eyebrow">Try the Product</p>
+          <h2>Start with one decision and review it clearly.</h2>
           <p>
-            Open the rehearsal lab and test how SignalLoom reframes launches, pricing changes, and
-            market-entry bets before they go public.
+            Open the product workspace and review a launch, pricing change, or market expansion
+            plan before it goes live.
           </p>
         </div>
         <Link href="/rehearse" className="pillButton">

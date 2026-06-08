@@ -10,7 +10,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "SignalLoom | Signal Loom",
   description:
-    "SignalLoom is the AI decision-rehearsal platform from Signal Loom, built by James Solomon to help teams rehearse launches and critical decisions before they go live.",
+    "SignalLoom is a decision-planning product from Signal Loom that helps teams review launches and other important changes before they go live.",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
               <SignalLoomLogo className="brandMark" decorative />
               <span className="brandWordmark">
                 SignalLoom
-                <small>Decision rehearsal for ambitious teams</small>
+                <small>Decision planning for product teams</small>
               </span>
             </Link>
 
@@ -50,7 +50,7 @@ export default function RootLayout({
           {children}
 
           <footer className="siteFooter">
-            <p>SignalLoom helps teams rehearse decisions before launch day arrives. Built by James Solomon.</p>
+            <p>SignalLoom helps teams review launches, pricing changes, and other important decisions before they go live.</p>
             <div>
               <Link href="/#product">Product</Link>
               <Link href="/security">Security</Link>

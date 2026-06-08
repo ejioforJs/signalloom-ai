@@ -1,38 +1,62 @@
 .shell {
+  position: relative;
   display: grid;
-  gap: 1.75rem;
-  padding: 1.5rem;
-  border-radius: 2rem;
-  background: rgba(248, 240, 230, 0.8);
-  border: 1px solid rgba(19, 36, 54, 0.12);
-  box-shadow: 0 30px 80px rgba(19, 36, 54, 0.08);
+  gap: 1.6rem;
+  padding: 1.6rem;
+  border-radius: 1.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    radial-gradient(circle at 82% 14%, rgba(141, 232, 216, 0.08), transparent 26%),
+    linear-gradient(165deg, rgba(14, 28, 43, 0.98), rgba(18, 39, 58, 0.94));
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at center, black 34%, transparent 88%);
+  opacity: 0.24;
 }
 
 .compact {
 }
 
 .full {
-  padding: 1.75rem;
+  padding: 1.8rem;
 }
 
 .panelHeader {
+  position: relative;
+  z-index: 1;
   display: grid;
-  gap: 1rem;
+  gap: 0.95rem;
 }
 
 .title {
-  margin: 0.35rem 0 0;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  line-height: 0.96;
+  margin: 0.3rem 0 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  color: #f8f3ea;
 }
 
 .helper {
   margin: 0;
-  max-width: 46rem;
-  color: rgba(23, 34, 48, 0.72);
+  max-width: 48rem;
+  color: rgba(248, 243, 234, 0.74);
+  line-height: 1.7;
 }
 
 .templates {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: 0.9rem;
@@ -40,18 +64,19 @@
 
 .templateButton {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.38rem;
   padding: 1rem;
-  border-radius: 1.3rem;
-  border: 1px solid rgba(19, 36, 54, 0.12);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(239, 228, 214, 0.85));
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.05));
   text-align: left;
-  color: inherit;
+  color: #f8f3ea;
   cursor: pointer;
   transition:
-    transform 150ms ease,
-    border-color 150ms ease,
-    box-shadow 150ms ease;
+    transform 170ms ease,
+    border-color 170ms ease,
+    background 170ms ease,
+    box-shadow 170ms ease;
 }
 
 .templateButton span {
@@ -60,19 +85,22 @@
 }
 
 .templateButton small {
-  color: rgba(23, 34, 48, 0.7);
+  color: rgba(248, 243, 234, 0.62);
 }
 
 .templateButton:hover {
   transform: translateY(-3px);
-  border-color: rgba(0, 168, 134, 0.45);
-  box-shadow: 0 14px 36px rgba(19, 36, 54, 0.08);
+  border-color: rgba(141, 232, 216, 0.28);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.07));
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
 }
 
 .workspace {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 1.2rem;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
 }
 
 .formStack {
@@ -81,45 +109,56 @@
   align-content: start;
 }
 
-.form {
+.form,
+.historyPanel {
   display: grid;
   gap: 1rem;
-  padding: 1.15rem;
-  border-radius: 1.6rem;
-  background: rgba(255, 252, 247, 0.88);
-  border: 1px solid rgba(19, 36, 54, 0.08);
+  padding: 1.2rem;
+  border-radius: 1.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.95), rgba(250, 243, 234, 0.86));
+  box-shadow: var(--shadow-sm);
 }
 
 .field {
   display: grid;
-  gap: 0.45rem;
+  gap: 0.48rem;
 }
 
 .field span {
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(19, 36, 54, 0.62);
+  color: rgba(16, 33, 51, 0.6);
 }
 
 .field input,
 .field textarea,
 .field select {
   width: 100%;
-  border: 1px solid rgba(19, 36, 54, 0.12);
+  border: 1px solid rgba(16, 33, 51, 0.1);
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 0.95rem 1rem;
-  color: inherit;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 0.98rem 1rem;
+  color: var(--ink);
   font: inherit;
   resize: vertical;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .field input:focus,
 .field textarea:focus,
 .field select:focus {
-  outline: 2px solid rgba(0, 168, 134, 0.28);
-  border-color: rgba(0, 168, 134, 0.45);
+  outline: none;
+  border-color: rgba(4, 154, 132, 0.45);
+  box-shadow:
+    0 0 0 4px rgba(4, 154, 132, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  transform: translateY(-1px);
 }
 
 .formActions {
@@ -129,17 +168,8 @@
 
 .formHint {
   margin: 0;
-  color: rgba(23, 34, 48, 0.68);
-  line-height: 1.55;
-}
-
-.historyPanel {
-  display: grid;
-  gap: 1rem;
-  padding: 1.15rem;
-  border-radius: 1.6rem;
-  background: rgba(255, 252, 247, 0.88);
-  border: 1px solid rgba(19, 36, 54, 0.08);
+  color: var(--ink-soft);
+  line-height: 1.6;
 }
 
 .historyHeader {
@@ -148,13 +178,15 @@
 }
 
 .historyHeader h3 {
-  margin: 0.35rem 0 0;
-  font-size: 1.2rem;
+  margin: 0.25rem 0 0;
+  font-size: 1.18rem;
+  color: var(--night);
 }
 
 .historyHeader p {
   margin: 0;
-  color: rgba(23, 34, 48, 0.72);
+  color: var(--ink-soft);
+  line-height: 1.6;
 }
 
 .historyList {
@@ -170,22 +202,22 @@
   display: grid;
   gap: 0.55rem;
   padding: 1rem;
-  border-radius: 1.2rem;
-  border: 1px solid rgba(19, 36, 54, 0.1);
-  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1.15rem;
+  border: 1px solid rgba(16, 33, 51, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.66));
   text-align: left;
   color: inherit;
   cursor: pointer;
   transition:
-    transform 150ms ease,
-    border-color 150ms ease,
-    box-shadow 150ms ease;
+    transform 170ms ease,
+    border-color 170ms ease,
+    box-shadow 170ms ease;
 }
 
 .historyButton:hover {
-  transform: translateY(-2px);
-  border-color: rgba(0, 168, 134, 0.4);
-  box-shadow: 0 14px 32px rgba(19, 36, 54, 0.08);
+  transform: translateY(-3px);
+  border-color: rgba(4, 154, 132, 0.16);
+  box-shadow: 0 16px 28px rgba(16, 33, 51, 0.08);
 }
 
 .historyMeta {
@@ -194,19 +226,20 @@
   justify-content: space-between;
   gap: 0.8rem;
   flex-wrap: wrap;
-  font-size: 0.78rem;
-  color: rgba(23, 34, 48, 0.62);
+  font-size: 0.76rem;
+  color: var(--ink-muted);
 }
 
 .historyButton strong {
   font-size: 1rem;
+  color: var(--night);
 }
 
 .historyButton p,
 .historyEmpty,
 .copyStatus {
   margin: 0;
-  color: rgba(23, 34, 48, 0.72);
+  color: var(--ink-soft);
 }
 
 .output {
@@ -218,16 +251,32 @@
 .storyCard,
 .detailCard,
 .emptyState {
+  position: relative;
+  overflow: hidden;
   padding: 1.2rem;
-  border-radius: 1.6rem;
-  background: linear-gradient(160deg, rgba(19, 36, 54, 0.95), rgba(15, 29, 43, 0.9));
-  color: #f8f0e7;
+  border-radius: 1.45rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(165deg, rgba(14, 28, 43, 0.98), rgba(19, 39, 58, 0.92));
+  color: #f8f3ea;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.2);
+}
+
+.scoreCard::before,
+.storyCard::before,
+.detailCard::before,
+.emptyState::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--coral), var(--gold), var(--teal));
+  opacity: 0.9;
 }
 
 .scoreCard {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.45rem;
   justify-items: start;
 }
 
@@ -243,15 +292,16 @@
 }
 
 .scoreCard strong {
-  font-size: clamp(3rem, 9vw, 4.6rem);
+  font-size: clamp(3rem, 8vw, 4.6rem);
   line-height: 0.9;
-  color: #f1c27d;
+  color: var(--gold);
+  letter-spacing: -0.05em;
 }
 
 .resultTitle {
-  margin: 0.1rem 0 0;
-  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
-  line-height: 1.05;
+  margin: 0.15rem 0 0;
+  font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+  line-height: 1.02;
   color: #ffffff;
 }
 
@@ -259,70 +309,70 @@
 .cardEyebrow {
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 0.72rem;
-  color: rgba(248, 240, 231, 0.64);
+  font-size: 0.7rem;
+  color: rgba(248, 243, 234, 0.62);
 }
 
 .storyCard h3,
 .emptyState h3 {
-  margin: 0.4rem 0 0.65rem;
-  font-size: clamp(1.3rem, 3vw, 2rem);
-  line-height: 1.02;
+  margin: 0.35rem 0 0.7rem;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.04;
 }
 
 .generatedAt,
 .metaText {
-  color: rgba(248, 240, 231, 0.64);
-  font-size: 0.82rem;
+  color: rgba(248, 243, 234, 0.62);
+  font-size: 0.8rem;
 }
 
 .engineBadge,
 .severityBadge,
 .secondaryButton {
   border-radius: 999px;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .engineBadge,
 .severityBadge {
-  padding: 0.38rem 0.62rem;
+  padding: 0.4rem 0.64rem;
 }
 
 .engineLive,
 .severityLow {
-  background: rgba(0, 168, 134, 0.18);
-  color: #c7ffe8;
+  background: rgba(4, 154, 132, 0.18);
+  color: var(--teal-soft);
 }
 
 .engineMock,
 .severityMedium {
-  background: rgba(241, 194, 125, 0.16);
-  color: #ffe5b0;
+  background: rgba(240, 191, 115, 0.16);
+  color: #ffe0aa;
 }
 
 .severityHigh {
-  background: rgba(255, 124, 81, 0.16);
-  color: #ffd3c7;
+  background: rgba(255, 122, 89, 0.16);
+  color: #ffd1c4;
 }
 
 .secondaryButton {
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.08);
-  color: #f8f0e7;
-  padding: 0.7rem 0.95rem;
+  color: #f8f3ea;
+  padding: 0.72rem 0.96rem;
   cursor: pointer;
   transition:
-    transform 150ms ease,
-    border-color 150ms ease,
-    background 150ms ease;
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
 }
 
 .secondaryButton:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.13);
 }
 
 .storyCard p,
@@ -330,7 +380,8 @@
 .detailCard p,
 .emptyState p {
   margin: 0;
-  color: rgba(248, 240, 231, 0.78);
+  color: rgba(248, 243, 234, 0.78);
+  line-height: 1.65;
 }
 
 .twoUp {
@@ -340,30 +391,31 @@
 }
 
 .detailCard ul {
-  margin: 0.75rem 0 0;
+  margin: 0.85rem 0 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 0.9rem;
+  gap: 0.95rem;
 }
 
 .detailCard li {
   display: grid;
-  gap: 0.2rem;
+  gap: 0.25rem;
+  padding-top: 0.1rem;
 }
 
 .detailCard li strong {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   color: #ffffff;
 }
 
 .detailCard li small {
   display: block;
-  margin-top: 0.15rem;
+  margin-top: 0.18rem;
 }
 
 .detailCard li p {
-  font-size: 0.95rem;
+  font-size: 0.94rem;
 }
 
 .detailCard li::before {
@@ -372,7 +424,8 @@
 
 .error {
   margin: 0;
-  color: #9a2b10;
+  color: #a6391a;
+  font-weight: 600;
 }
 
 @media (max-width: 980px) {
@@ -382,9 +435,9 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .shell {
-    padding: 1rem;
+    padding: 1.15rem;
     border-radius: 1.5rem;
   }
 
@@ -395,6 +448,12 @@
   .emptyState,
   .historyPanel {
     padding: 1rem;
-    border-radius: 1.25rem;
+    border-radius: 1.2rem;
+  }
+
+  .form :global(.pillButton),
+  .secondaryButton,
+  .historyButton {
+    width: 100%;
   }
 }

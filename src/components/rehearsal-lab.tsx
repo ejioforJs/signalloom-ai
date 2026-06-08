@@ -28,11 +28,11 @@ const buildShareCopy = (result: RehearsalResult) =>
   [
     result.scenarioTitle,
     `Readiness Score: ${result.readinessScore}`,
-    `Signal Headline: ${result.signalHeadline}`,
+    `Summary: ${result.signalHeadline}`,
     "",
     result.executiveBrief,
     "",
-    "Launch Checklist:",
+    "Action Checklist:",
     ...result.launchChecklist.map((item) => `- ${item}`),
   ].join("\n");
 
@@ -162,7 +162,7 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
         throw new Error(
           "error" in payload && typeof payload.error === "string"
             ? payload.error
-            : "The rehearsal engine could not generate a room.",
+            : "The analysis could not be generated.",
         );
       }
 
@@ -184,7 +184,7 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
       setError(
         submissionError instanceof Error
           ? submissionError.message
-          : "Something went wrong while preparing the rehearsal room.",
+          : "Something went wrong while preparing the analysis.",
       );
     } finally {
       setIsSubmitting(false);
@@ -198,7 +198,7 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
 
     try {
       await navigator.clipboard.writeText(buildShareCopy(result));
-      setCopyState("Executive brief copied.");
+      setCopyState("Summary copied.");
     } catch {
       setCopyState("Clipboard access is unavailable in this browser.");
     }
@@ -208,13 +208,12 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
     <section className={`${styles.shell} ${variant === "full" ? styles.full : styles.compact}`}>
       <div className={styles.panelHeader}>
         <div>
-          <p className="eyebrow">Signal Engine</p>
-          <h2 className={styles.title}>Run an AI rehearsal room</h2>
+          <p className="eyebrow">Analysis</p>
+          <h2 className={styles.title}>Review a scenario</h2>
         </div>
         <p className={styles.helper}>
-          Paste an initiative, name the audience, and describe the pressure in the room.
-          SignalLoom returns a readiness score, signal headline, and execution-ready rehearsal
-          packet.
+          Enter the initiative, affected audience, and main concern. SignalLoom returns a
+          readiness score, summary, key risks, stakeholder input, and recommended next steps.
         </p>
       </div>
 
@@ -243,35 +242,35 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
                 rows={4}
                 value={formState.initiative}
                 onChange={handleChange("initiative")}
-                placeholder="What are you launching, changing, or recovering from?"
+                placeholder="What decision, launch, or change are you reviewing?"
                 required
               />
             </label>
 
             <label className={styles.field}>
-              <span>Audience Under Pressure</span>
+              <span>Primary Audience</span>
               <input
                 type="text"
                 value={formState.audience}
                 onChange={handleChange("audience")}
-                placeholder="Who needs to trust this first?"
+                placeholder="Who is most affected by this decision?"
                 required
               />
             </label>
 
             <label className={styles.field}>
-              <span>Tension in the Room</span>
+              <span>Main Concern</span>
               <textarea
                 rows={4}
                 value={formState.tension}
                 onChange={handleChange("tension")}
-                placeholder="What might make this plan wobble when it meets the real world?"
+                placeholder="What is the main risk, objection, or uncertainty?"
                 required
               />
             </label>
 
             <label className={styles.field}>
-              <span>Forecast Horizon</span>
+              <span>Review Horizon</span>
               <select value={formState.horizon} onChange={handleChange("horizon")}>
                 <option value="14">14 days</option>
                 <option value="30">30 days</option>
@@ -281,11 +280,11 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
 
             <div className={styles.formActions}>
               <button className="pillButton" type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Weaving Signals..." : "Generate Rehearsal"}
+                {isSubmitting ? "Analyzing..." : "Analyze Scenario"}
               </button>
               <p className={styles.formHint}>
-                SignalLoom uses a live OpenAI run when `OPENAI_API_KEY` is set, and automatically
-                falls back to the local simulation when it is not.
+                If `OPENAI_API_KEY` is set, SignalLoom uses a live AI model. If not, it uses the
+                built-in local engine.
               </p>
             </div>
 
@@ -296,12 +295,11 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
             <aside className={styles.historyPanel}>
               <div className={styles.historyHeader}>
                 <div>
-                  <p className="eyebrow">Recent Rooms</p>
-                  <h3>Reopen the rehearsals your team wants to keep using.</h3>
+                  <p className="eyebrow">Recent Reviews</p>
+                  <h3>Reopen previous analyses.</h3>
                 </div>
                 <p>
-                  Every generated room is saved in this browser so you can revisit the brief, drill
-                  set, and execution checklist.
+                  Each generated result is saved in this browser so you can reopen it later.
                 </p>
                 {copyState ? <p className={styles.copyStatus}>{copyState}</p> : null}
               </div>
@@ -333,7 +331,7 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
                 </ul>
               ) : (
                 <p className={styles.historyEmpty}>
-                  Your recent rehearsal rooms will appear here after the first run.
+                  Your recent analyses will appear here after the first run.
                 </p>
               )}
             </aside>
@@ -364,25 +362,25 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
                 <small className={styles.generatedAt}>Generated {formatTimestamp(result.createdAt)}</small>
                 <div className={styles.resultActions}>
                   <button type="button" className={styles.secondaryButton} onClick={copyBrief}>
-                    Copy Brief
+                    Copy Summary
                   </button>
                 </div>
               </div>
 
               <div className={styles.storyCard}>
-                <span className={styles.cardEyebrow}>Signal Headline</span>
+                <span className={styles.cardEyebrow}>Summary</span>
                 <h3>{result.signalHeadline}</h3>
                 <p>{result.narrative}</p>
               </div>
 
               <article className={styles.detailCard}>
-                <span className={styles.cardEyebrow}>Executive Brief</span>
+                <span className={styles.cardEyebrow}>Decision Brief</span>
                 <p>{result.executiveBrief}</p>
               </article>
 
               <div className={styles.twoUp}>
                 <article className={styles.detailCard}>
-                  <span className={styles.cardEyebrow}>Flashpoints</span>
+                  <span className={styles.cardEyebrow}>Key Risks</span>
                   <ul>
                     {result.flashpoints.map((item) => (
                       <li key={item.title}>
@@ -407,7 +405,7 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
                 </article>
 
                 <article className={styles.detailCard}>
-                  <span className={styles.cardEyebrow}>Synthetic Voices</span>
+                  <span className={styles.cardEyebrow}>Stakeholder Perspectives</span>
                   <ul>
                     {result.voices.map((voice) => (
                       <li key={voice.role}>
@@ -421,7 +419,7 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
 
               <div className={styles.twoUp}>
                 <article className={styles.detailCard}>
-                  <span className={styles.cardEyebrow}>Drill Set</span>
+                  <span className={styles.cardEyebrow}>Recommended Reviews</span>
                   <ul>
                     {result.drills.map((drill) => (
                       <li key={drill.title}>
@@ -434,7 +432,7 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
                 </article>
 
                 <article className={styles.detailCard}>
-                  <span className={styles.cardEyebrow}>Timeline Forecast</span>
+                  <span className={styles.cardEyebrow}>Expected Timeline</span>
                   <ul>
                     {result.timeline.map((entry) => (
                       <li key={entry.label}>
@@ -448,7 +446,7 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
 
               <div className={styles.twoUp}>
                 <article className={styles.detailCard}>
-                  <span className={styles.cardEyebrow}>Proof Points</span>
+                  <span className={styles.cardEyebrow}>Suggested Evidence</span>
                   <ul>
                     {result.proofPoints.map((item) => (
                       <li key={item}>
@@ -459,7 +457,7 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
                 </article>
 
                 <article className={styles.detailCard}>
-                  <span className={styles.cardEyebrow}>Launch Checklist</span>
+                  <span className={styles.cardEyebrow}>Action Checklist</span>
                   <ul>
                     {result.launchChecklist.map((item) => (
                       <li key={item}>
@@ -472,11 +470,11 @@ export function RehearsalLab({ variant = "compact" }: { variant?: LabVariant }) 
             </>
           ) : (
             <div className={styles.emptyState}>
-              <span className={styles.cardEyebrow}>Room Preview</span>
-              <h3>Your rehearsal output appears here.</h3>
+              <span className={styles.cardEyebrow}>Preview</span>
+              <h3>Your analysis appears here.</h3>
               <p>
-                The first pass focuses on clarity, trust friction, operational handoffs, and the
-                first 72 hours after the decision meets real customers and internal stakeholders.
+                SignalLoom will show a structured review of likely risks, stakeholder concerns,
+                timeline expectations, and recommended actions.
               </p>
             </div>
           )}

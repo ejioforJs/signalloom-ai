@@ -24,7 +24,7 @@ export async function POST(request: Request) {
   if (!input.initiative || !input.audience || !input.tension) {
     return NextResponse.json(
       {
-        error: "Initiative, audience, and tension are required to generate a rehearsal room.",
+        error: "Initiative, audience, and main concern are required to generate an analysis.",
       },
       { status: 400 },
     );
